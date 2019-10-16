@@ -1,0 +1,25 @@
+<div *ngIf="jobFound && dataLoadingDone">
+    <h2 class="text-center">{{ job.title }}</h2>
+    <h4 class="text-center">{{ job.location }}</h4>
+    <hr>
+    <table class="table table-hover">
+        <tbody>
+            <tr *ngFor="let jobPosition of jobPositions | paginate: config">
+                <td><img [src]="jobPosition.companyLogo" alt="company-logo" class="img-thumbnail"></td>
+                <td>
+                    <h4 [innerHtml]="jobPosition.company + ' - ' + jobPosition.title + ' - ' + jobPosition.type"></h4>
+                    <p [innerHtml]="jobPosition.description"></p>
+                    <h5>Way to apply</h5>
+                    <p [innerHtml]="jobPosition.howToApply"></p>
+                </td>
+            </tr>
+            <hr>
+        </tbody>
+    </table>
+
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    
+</div>
+<div *ngIf="!jobFound && dataLoadingDone">
+    <h4 class="text-center">No job is found on the search criteria. Please try again.</h4>
+</div>

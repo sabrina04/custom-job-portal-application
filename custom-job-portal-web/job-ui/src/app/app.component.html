@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <h4 class="card-title text-center text-white py-3">{{ body }}</h4>
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item"><a routerLink="/jobs" class="btn btn-info">See All Jobs</a></li>
+            <li class="list-inline-item"><a routerLink="/job" class="btn btn-info">Search Job</a></li>
+          </ul>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

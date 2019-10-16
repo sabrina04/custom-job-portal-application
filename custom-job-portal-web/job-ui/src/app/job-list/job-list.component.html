@@ -1,0 +1,12 @@
+<div class="row">
+    <div *ngIf="dataLoadingDone && jobs.length == 0">
+        There is no job available right now. Please check back later.
+    </div>
+    <div class="col-4 card box-margin" *ngFor="let job of jobs">
+        <div class="card-block">
+            <h5 class="card-title text-center">{{ job.title }}</h5>
+            <p class="card-text text-center">{{ job.location }}</p>
+            <a class="btn btn-primary button-center" [routerLink]="['/job', job.id, 'positions']">See Positions</a>
+        </div>
+    </div>
+</div>
